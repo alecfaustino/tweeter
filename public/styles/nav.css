@@ -1,0 +1,31 @@
+nav {
+  display: flex;
+  background-color: #4056A1;
+  height: 120px;
+  color: #FFFFFF;
+  padding: 1.5em;
+  justify-content: space-between;
+}
+
+/* Tweeter "Logo" */
+nav span {
+  font-family: "Bungee", sans-serif;
+}
+
+/* Right side Nav */
+.right-side-nav {
+  display: flex;
+  /* stack the arrow and span on top of each other */
+  flex-direction: column;
+}
+
+#write-a-tweet {
+font-family: "Source Sans 3", sans-serif;
+}
+
+
+nav i {
+  display: flex;
+  align-self: center;
+  color: red;
+}

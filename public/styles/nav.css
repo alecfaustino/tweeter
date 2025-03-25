@@ -6,7 +6,10 @@ nav {
   color: #FFFFFF;
   padding: 1.5em;
   justify-content: space-between;
+  /* make the navbar always persist at the top of the viewport */
   position: fixed;
+  top: 0px;
+
 }
 
 /* Tweeter "Logo" */

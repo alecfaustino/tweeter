@@ -19,9 +19,23 @@ html {
   background-color: cornsilk;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
+  justify-content: center;
+  /* padding to accomodate nav bar height */
   padding-top: 120px;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.container {
+  /* container spec */
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-self: center;
+  /* all tags centered */
+  justify-content: center;
+  text-align: center;
+
+}

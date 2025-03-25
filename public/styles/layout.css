@@ -33,9 +33,14 @@ html {
   display: flex;
   flex-direction: column;
   width: 90%;
-  justify-self: center;
+  /* center itself within the body */
+  margin: 0 auto;
+
+  /* inherent the color from the parent element (body) */
+  background-color: inherit;
   /* all tags centered */
   justify-content: center;
   text-align: center;
+
 
 }

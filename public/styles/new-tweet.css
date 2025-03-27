@@ -30,4 +30,10 @@
   color: white;
 }
 
+/* when the counter goes to a negative number */
+/* .not-valid is added */
+/* it is removed when the count is >= 0 */
+.counter.not-valid {
+  color: red;
+}
 

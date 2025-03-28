@@ -57,6 +57,6 @@
   margin-right: 1em;
 }
 
-.tweet-icons:hover {
+.tweet-icons i:hover {
   color: #ffcc00;
 }

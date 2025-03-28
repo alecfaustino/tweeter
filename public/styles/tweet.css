@@ -7,6 +7,10 @@
   justify-content: space-between;
 }
 
+.tweet:hover {
+  box-shadow: 10px 10px 10px grey;
+}
+
 .tweet header {
   display: flex;
   flex-direction: row;
@@ -51,4 +55,8 @@
   gap: 10px;
   padding-right: 1em;
   margin-right: 1em;
+}
+
+.tweet-icons:hover {
+  color: #ffcc00;
 }

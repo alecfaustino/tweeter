@@ -17,6 +17,10 @@
   padding: 1em;
 }
 
+.person-info {
+  display: flex;
+  gap: 10px;
+}
 .tweet footer {
   display: flex;
   flex-direction: row;
@@ -26,8 +30,11 @@
   margin: 0px;
   font-size: 18px;
 }
-
-.tweet span {
+.post-date {
+  margin-left: 1em;
+  padding-left: 1em;
+}
+.tweet p {
   border-bottom: 5px solid black;
   text-align: left;
   margin: 1em;
@@ -37,4 +44,11 @@
 .tweet img {
   height: 50px;
   width: 50px;
+}
+
+.tweet-icons {
+  display: flex;
+  gap: 10px;
+  padding-right: 1em;
+  margin-right: 1em;
 }

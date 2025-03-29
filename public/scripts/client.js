@@ -70,6 +70,7 @@ $(document).ready(function() {
       url: endpoint,
       data: formInfo,
       success: function(response) {
+        $('#tweets-container').empty();
         loadTweets();
         //reset the tweetText 
         $('textarea[name="text"]').val("")

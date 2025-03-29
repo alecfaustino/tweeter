@@ -46,6 +46,7 @@ const data = [
   }
 ]
   
+// the HTML to render 
   const createTweetElement = function(tweetObj) {
     
     return $(`
@@ -74,7 +75,7 @@ const data = [
       `);
   }
   
-  
+  // logic for how to render all tweets
   const renderTweets = function(tweetArr) {
     for (const tweet of tweetArr) {
       const $tweet = createTweetElement(tweet);
@@ -85,4 +86,19 @@ const data = [
   }
 
   renderTweets(data);
+
+  $('#create-tweet-form').on("submit", function(event) {
+    event.preventDefault();
+    const formInfo = $( this ).serialize();
+    const enpoint = "/api/tweets";
+    $.ajax({
+      type: "POST",
+      url: enpoint,
+      data: formInfo,
+      success: function(response) {
+        console.log("Submitted: ", response);
+      },
+      dataType: "json"
+    });
+  })
 });

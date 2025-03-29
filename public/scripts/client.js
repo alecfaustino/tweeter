@@ -48,16 +48,28 @@ $(document).ready(function() {
     const formInfo = $( this ).serialize();
     const endpoint = "/api/tweets";
 
-    //shorthand ajax function
-    $.ajax({
-      type: "POST",
-      url: endpoint,
-      data: formInfo,
-      success: function(response) {
-        console.log("Submitted: ", response);
-      },
-      dataType: "json"
-    });
+    // get the context of the text area for validation
+    const tweetText = $('textarea[name="text"]').val();
+
+    // form validation
+    if(
+      tweetText === "" || 
+      tweetText === null || 
+      tweetText.length < 0 ||
+      tweetText.length > 140
+    ) {
+      alert("The tweet should be between 1 and 140 characters long!");
+      return;
+    } 
+      $.ajax({
+        type: "POST",
+        url: endpoint,
+        data: formInfo,
+        success: function(response) {
+          console.log("Submitted: ", response);
+        },
+        dataType: "json"
+      });
   });
 
   // fetching tweets from /tweets

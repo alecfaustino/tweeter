@@ -34,7 +34,6 @@ $(document).ready(function() {
   const renderTweets = function(tweetArr) {
     for (const tweet of tweetArr) {
       const $tweet = createTweetElement(tweet);
-      createTweetElement(tweet);
       // prepend to put the newest on top
       $('#tweets-container').prepend($tweet);
     }
@@ -51,25 +50,29 @@ $(document).ready(function() {
     // get the context of the text area for validation
     const tweetText = $('textarea[name="text"]').val();
 
-    // form validation
-    if(
+    // form validation empty
+    if (
       tweetText === "" || 
-      tweetText === null || 
-      tweetText.length < 0 ||
-      tweetText.length > 140
+      tweetText === null ||
+      tweetText.length < 0
     ) {
-      alert("The tweet should be between 1 and 140 characters long!");
+      alert("The tweet cannot be empty!");
       return;
-    } 
-      $.ajax({
-        type: "POST",
-        url: endpoint,
-        data: formInfo,
-        success: function(response) {
-          console.log("Submitted: ", response);
-        },
-        dataType: "json"
-      });
+    }
+    // form validation too long
+    if (tweetText.length > 140) {
+      alert("The tweet cannot exceed 140 characters!");
+      return;
+    }
+    $.ajax({
+      type: "POST",
+      url: endpoint,
+      data: formInfo,
+      success: function(response) {
+        console.log("Submitted: ", response);
+      },
+      dataType: "json"
+    });
   });
 
   // fetching tweets from /tweets

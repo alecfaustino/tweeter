@@ -54,7 +54,7 @@ $(document).ready(function() {
     if (
       tweetText === "" || 
       tweetText === null ||
-      tweetText.length < 0
+      tweetText.trim().length < 0
     ) {
       alert("The tweet cannot be empty!");
       return;
@@ -64,12 +64,15 @@ $(document).ready(function() {
       alert("The tweet cannot exceed 140 characters!");
       return;
     }
+    // if valid, post
     $.ajax({
       type: "POST",
       url: endpoint,
       data: formInfo,
       success: function(response) {
-        console.log("Submitted: ", response);
+        loadTweets();
+        //reset the tweetText 
+        $('textarea[name="text"]').val("")
       },
       dataType: "json"
     });

@@ -37,3 +37,7 @@
   color: red;
 }
 
+#tweet-error .no-error {
+  display: none;
+}
+

@@ -49,6 +49,17 @@ $(document).ready(function () {
 
   }
 
+  const renderErrorMessage = function (message) {
+    const $error = $("#tweet-error").removeClass("no-error")
+    .append(
+      $("<i>").addClass("fa-solid fa-triangle-exclamation"),
+      $("<span>").text(message),
+      $("<i>").addClass("fa-solid fa-triangle-exclamation")
+    );
+
+    return $error;
+  }
+
   // new tweet form handling
   $('#create-tweet-form').on("submit", function (event) {
     // prevents reloading on submit
@@ -65,12 +76,12 @@ $(document).ready(function () {
       tweetText === null ||
       tweetText.trim().length < 0
     ) {
-      alert("The tweet cannot be empty!");
+      renderErrorMessage("The tweet cannot be empty!")
       return;
     }
     // form validation too long
     if (tweetText.length > 140) {
-      alert("The tweet cannot exceed 140 characters!");
+      renderErrorMessage("The tweet cannot exceed 140 characters!");
       return;
     }
     // if valid, post
@@ -84,6 +95,8 @@ $(document).ready(function () {
         loadTweets();
         //reset the tweetText 
         $('textarea[name="text"]').val("")
+        // clear error message showing from previously invalid tweet
+        $("#tweet-error").addClass("no-error").empty();
       },
       dataType: "json"
     });

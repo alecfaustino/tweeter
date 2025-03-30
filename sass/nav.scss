@@ -1,28 +1,38 @@
+$bungee-font-stack: "Bungee", sans-serif;
+$secondary-font-stack: "Source Sans 3", sans-serif;
+$main-blue-color: #68aaba;
+$purple: #4056A1;
+
 nav {
   display: flex;
-  background-color: #68aaba;
+  background-color: $main-blue-color;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   height: 120px;
   width: 100%;
   color: #FFFFFF;
   padding: 1.5em;
   justify-content: space-between;
+  // make the navbar always persist at the top of the viewport 
   position: fixed;
   top: 0px;
-}
-nav span {
-  font: 100% "Bungee", sans-serif;
-}
-nav i {
-  display: flex;
-  align-self: center;
-  color: red;
+
+  // Tweeter Logo
+  span { font: 100% $bungee-font-stack; }
+
+  // double angle down icon
+  i {
+    display: flex;
+    align-self: center;
+    color: red;
+
+  }
+
 }
 
 .right-side-nav {
-  display: flex;
-  /* stack the arrow and span on top of each other */
-  flex-direction: column;
+    display: flex;
+    /* stack the arrow and span on top of each other */
+    flex-direction: column;
 }
 
 .right-side-nav:hover {
@@ -30,7 +40,7 @@ nav i {
 }
 
 #write-a-tweet {
-  font-family: "Source Sans 3", sans-serif;
+  font-family: $secondary-font-stack;
 }
 
 /* scroll to top button */
@@ -55,9 +65,10 @@ nav i {
   display: none;
 }
 
+
 @media (min-width: 1024px) {
   nav {
-    background-color: #4056A1;
+    background-color: $purple;
     background-image: none;
   }
 }

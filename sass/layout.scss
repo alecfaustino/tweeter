@@ -1,7 +1,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -9,11 +8,12 @@ html {
 /*
  * Global layout stuff
  */
-body {
+
+ body {
   color: #545149;
   background-color: cornsilk;
   font-size: 24px;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   justify-content: center;
   /* padding to accomodate nav bar height */
   padding-top: 120px;
@@ -26,6 +26,7 @@ body {
   width: 90%;
   /* center itself within the body */
   margin: 0 auto;
+
   /* inherent the color from the parent element (body) */
   background-color: inherit;
   /* all tags centered */
@@ -34,11 +35,13 @@ body {
   padding: 2rem;
 }
 
+
 @media (min-width: 1024px) {
   .desktop-container {
     display: flex;
     gap: 1em;
   }
+
   /* the tweets and form */
   .container {
     display: flex;

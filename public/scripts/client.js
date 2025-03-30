@@ -37,6 +37,9 @@ $(document).ready(function() {
         $('textarea[name="text"]').val("");
         // slide up & clear error message showing from previously invalid tweet
         $("#tweet-error").addClass("no-error").empty();
+        // reset the character counter
+        $("#create-tweet-form .counter").text("140");
+
       },
       dataType: "json"
     });

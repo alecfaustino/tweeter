@@ -1,8 +1,12 @@
-.profile-header {
+@mixin centerAlign {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.profile-header {
+  @include centerAlign();
   flex-direction: column;
   width: 100%;
   background-color: #68aaba;
@@ -13,21 +17,16 @@
 
 /* Profile picture positioning */
 header div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  @include centerAlign();
 }
 
 /* Profile name text positioning */
 header h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  @include centerAlign();
 }
 
 @media (min-width: 1024px) {
+  // name and avatar
   .profile-header {
     display: flex;
     flex-direction: column;

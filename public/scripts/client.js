@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
   // listening for new tweet form handling event
   $('#create-tweet-form').on("submit", function (event) {
@@ -16,7 +16,7 @@ $(document).ready(function () {
       tweetText === null ||
       tweetText.trim().length < 0
     ) {
-      renderErrorMessage("The tweet cannot be empty!")
+      renderErrorMessage("The tweet cannot be empty!");
       return;
     }
     // form validation too long
@@ -33,8 +33,8 @@ $(document).ready(function () {
         // empty container so tweets are not re-appended (duplicated)
         $('#tweets-container').empty();
         loadTweets();
-        //reset the tweetText 
-        $('textarea[name="text"]').val("")
+        //reset the tweetText
+        $('textarea[name="text"]').val("");
         // slide up & clear error message showing from previously invalid tweet
         $("#tweet-error").addClass("no-error").empty();
       },
@@ -64,11 +64,12 @@ $(document).ready(function () {
   // smooth scroll animation
   $(".to-top-icon").on("click", function(event) {
     // prevent the sudden jump to top with href="#"
-    event.preventDefault()
+    event.preventDefault();
+    // both html and body selector for browser viewport scroll
     $("html, body").animate({scrollTop: 0}, "slow");
   });
 
 
-  //load tweets on load 
+  //load tweets on load
   loadTweets();
 });

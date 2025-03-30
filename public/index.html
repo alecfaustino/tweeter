@@ -24,20 +24,24 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css">
 
   <!-- Header CSS -->
-   <link rel="stylesheet" href="/styles/header.css" type="text/css">
+  <link rel="stylesheet" href="/styles/header.css" type="text/css">
 
-   <!-- New Tweet CSS -->
+  <!-- New Tweet CSS -->
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
 
   <!-- Tweets CSS -->
-   <link rel="stylesheet" href="/styles/tweet.css" type="text/css">
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css">
 
   <!-- ********** CDNs *********** -->
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- timeago -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- ********** JS files ********** -->
   <!-- External JS -->
@@ -65,46 +69,48 @@
     </div>
   </nav>
   <!-- "logged-in" user -->
-  <header>
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Alec Faustino</h2>
-    </div>
-  </header>
+  <div class="desktop-container">
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <div class="tweet-form">
-      <section class="new-tweet">
-        <!-- Error Message (Invalid Tweet) -->
-        <div id="tweet-error" class="no-error">
-          <!-- dynamically added by client.js -->
-        </div>
-        
-        
-        <!-- Compose Tweet -->
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/api/tweets" id="create-tweet-form">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+    <header class="profile-header">
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div>
+        <h2>Alec Faustino</h2>
+      </div>
+    </header>
+
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <div class="tweet-form">
+        <section class="new-tweet">
+          <!-- Error Message (Invalid Tweet) -->
+          <div id="tweet-error" class="no-error">
+            <!-- dynamically added by client.js -->
           </div>
-        </form>
+
+
+          <!-- Compose Tweet -->
+          <form method="POST" action="/api/tweets" id="create-tweet-form">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <!-- tweets container-->
+      <section id="tweets-container">
+        <!-- content being dynamically added by public/scripts/client.js -->
       </section>
-    </div>
 
-    <!-- tweets container-->
-    <section id="tweets-container">
-      <!-- content being dynamically added by public/scripts/client.js -->
-    </section>
+  </div>
+  <a href="#" class="to-top-icon"><i class="fa-solid fa-angles-up"></i></a>
 
-    <a href="#" class="to-top-icon"><i class="fa-solid fa-angles-up"></i></a>
-    
   </main>
 </body>
 

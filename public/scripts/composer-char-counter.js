@@ -3,17 +3,17 @@ $(document).ready(function() {
   console.log("DOM is loaded");
   $("#tweet-text").on("input", function() {
     // this refers to the tweet text area
-    // find the length of the value of the string 
+    // find the length of the value of the string
     let availableChars = 140 - $(this).val().length;
 
-    // counter is not a direct child of text area. 
+    // counter is not a direct child of text area.
     // traversing up to form and back down to counter
     // so that only the text area counter is adjusted
     
-    let counterElement = 
+    let counterElement =
     $(this)
-    .closest("form")
-    .find(".counter");
+      .closest("form")
+      .find(".counter");
 
     counterElement.text(availableChars);
 

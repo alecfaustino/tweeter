@@ -41,6 +41,29 @@ html {
   /* all tags centered */
   justify-content: center;
   text-align: center;
+  padding: 2rem;
+}
 
 
+@media (min-width: 1024px) {
+  .desktop-container {
+    display: flex;
+    gap: 1em;
+  }
+  /* the name and avatar */
+  .profile-header {
+    display: flex;
+    margin: 2rem;
+    /* only make the background grow as much as needed to fit content */
+    height: 100%;
+    /* make the profile header only 1/3 of screen */
+    flex: 1;
+    padding: 2rem;
+  }
+  /* the tweets and form */
+  .container {
+    display: flex;
+    /* allow container to take 2/3 of screen */
+    flex: 2;
+  }
 }

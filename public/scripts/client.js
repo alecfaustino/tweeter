@@ -42,8 +42,12 @@ $(document).ready(function () {
     });
   });
 
+  // when the "write a tweet" area is clicked, toggle form display
   $(".right-side-nav").on("click", function() {
-    $(".tweet-form").toggle("slow");
+    $(".tweet-form").slideToggle("slow", function() {
+      // once the animation completes 
+      $(this).find("textarea").focus();
+    });
   });
 
   //load tweets on load 

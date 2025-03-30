@@ -48,4 +48,14 @@ nav i {
   position: fixed;
   bottom: 24px;
   right: 24px;
+
+}
+
+.to-top-icon {
+  /* hidden by default */
+  display: none;
+}
+
+.to-top-icon:hover {
+  cursor: pointer;
 }

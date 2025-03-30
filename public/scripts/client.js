@@ -50,6 +50,25 @@ $(document).ready(function () {
     });
   });
 
+  //toggle button visibility on scroll
+  $(window).on("scroll", function() {
+    const $toTop = $(".to-top-icon");
+    // use scroll top to determine current vertical position of window
+    if ($(this).scrollTop() > 50) {
+      // scrolled more than 50px down, show icon
+      $toTop.fadeIn();
+    } else {
+      $toTop.fadeOut();
+    }
+  });
+  // smooth scroll animation
+  $(".to-top-icon").on("click", function(event) {
+    // prevent the sudden jump to top with href="#"
+    event.preventDefault()
+    $("html, body").animate({scrollTop: 0}, "slow");
+  });
+
+
   //load tweets on load 
   loadTweets();
 });

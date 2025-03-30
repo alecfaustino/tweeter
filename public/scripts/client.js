@@ -1,66 +1,6 @@
 $(document).ready(function () {
 
-  const createTweetElement = function (tweetObj) {
-    const timestamp = timeago.format(tweetObj.created_at - 11 * 1000 * 60 * 60); // returns in format like '11 hours ago'
-    // the HTML to render 
-
-    // The element which all else is appended
-    const $tweet = $("<article>").addClass("tweet");
-
-    // The header component of tweet
-    const $header = $("<header>")
-      .append(
-        $("<div>").addClass("person-info")
-          .append(
-            $("<img>").attr("src", tweetObj.user.avatars),
-            $("<strong>").text(tweetObj.user.name),
-          ),
-        ($("<small>").text(tweetObj.user.handle))
-      );
-
-    // The text component 
-    const $textComponent = $("<p>").text(tweetObj.content.text);
-    // The footer component
-
-    const $footer = $("<footer>")
-      .append($("<div>").addClass("post-date")
-        .append(
-          $("<small>").text(timestamp)),
-        $("<div>").addClass("tweet-icons")
-          .append(
-            $("<i>").addClass("fa-solid fa-flag"),
-            $("<i>").addClass("fa-solid fa-retweet"),
-            $("<i>").addClass("fa-solid fa-heart")
-          )
-      );
-
-    // Putting it all together
-    $tweet.append($header, $textComponent, $footer);
-    return $tweet;
-  };
-
-  // logic for how to render all tweets
-  const renderTweets = function (tweetArr) {
-    for (const tweet of tweetArr) {
-      const $tweet = createTweetElement(tweet);
-      // prepend to put the newest on top
-      $('#tweets-container').prepend($tweet);
-    }
-
-  }
-
-  const renderErrorMessage = function (message) {
-    const $error = $("#tweet-error").removeClass("no-error")
-    .append(
-      $("<i>").addClass("fa-solid fa-triangle-exclamation"),
-      $("<span>").text(message),
-      $("<i>").addClass("fa-solid fa-triangle-exclamation")
-    );
-
-    return $error;
-  }
-
-  // new tweet form handling
+  // listening for new tweet form handling event
   $('#create-tweet-form').on("submit", function (event) {
     // prevents reloading on submit
     event.preventDefault();
@@ -95,30 +35,13 @@ $(document).ready(function () {
         loadTweets();
         //reset the tweetText 
         $('textarea[name="text"]').val("")
-        // clear error message showing from previously invalid tweet
+        // slide up & clear error message showing from previously invalid tweet
         $("#tweet-error").addClass("no-error").empty();
       },
       dataType: "json"
     });
   });
 
-  // fetching tweets from /tweets
-  const loadTweets = function () {
-
-    const endpoint = "/api/tweets";
-
-    // shorthand ajax function
-    $.ajax({
-      type: "GET",
-      url: endpoint,
-      success: function (response) {
-        renderTweets(response);
-      },
-      dataType: "json"
-    });
-  };
-
   //load tweets on load 
-
   loadTweets();
 });

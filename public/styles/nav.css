@@ -1,6 +1,7 @@
 nav {
   display: flex;
-  background-color: #4056A1;
+  background-color: #68aaba;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   height: 120px;
   width: 100%;
   color: #FFFFFF;
@@ -58,4 +59,11 @@ nav i {
 
 .to-top-icon:hover {
   cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+  }
 }

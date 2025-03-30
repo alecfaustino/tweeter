@@ -35,7 +35,7 @@ nav i {
 
 /* scroll to top button */
 .fa-angles-up {
-  background-color: rgba(255, 0, 0, 0.5); /* Red with 50% opacity */
+  background-color: rgba(255, 0, 0, 0.5);
   color: white;
   padding: 1.25em;
   font-size: 1.25em;

@@ -37,7 +37,7 @@
   color: red;
 }
 
-/* make it disappear when the class .no-error is added via client.js*/
+/* make error message disappear when the class .no-error is added via client.js*/
 #tweet-error.no-error {
   display: none;
   border: none;

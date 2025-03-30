@@ -42,6 +42,10 @@ $(document).ready(function () {
     });
   });
 
+  $(".right-side-nav").on("click", function() {
+    $(".tweet-form").toggle("slow");
+  });
+
   //load tweets on load 
   loadTweets();
 });

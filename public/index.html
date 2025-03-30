@@ -77,24 +77,26 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <section class="new-tweet">
-      <!-- Error Message (Invalid Tweet) -->
-      <div id="tweet-error" class="no-error">
-        <!-- dynamically added by client.js -->
-      </div>
-      
-      
-      <!-- Compose Tweet -->
-      <h2>Compose Tweet</h2>
-      <form method="POST" action="/api/tweets" id="create-tweet-form">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+    <div class="tweet-form">
+      <section class="new-tweet">
+        <!-- Error Message (Invalid Tweet) -->
+        <div id="tweet-error" class="no-error">
+          <!-- dynamically added by client.js -->
         </div>
-      </form>
-    </section>
+        
+        
+        <!-- Compose Tweet -->
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/api/tweets" id="create-tweet-form">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+    </div>
 
     <!-- tweets container-->
     <section id="tweets-container">

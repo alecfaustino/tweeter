@@ -24,6 +24,10 @@ nav span {
   flex-direction: column;
 }
 
+.right-side-nav:hover {
+  cursor: pointer;
+}
+
 #write-a-tweet {
 font-family: "Source Sans 3", sans-serif;
 }

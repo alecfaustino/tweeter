@@ -38,3 +38,14 @@ nav i {
   align-self: center;
   color: red;
 }
+
+/* scroll to top button */
+.fa-angles-up {
+  background-color: red;
+  color: white;
+  padding: 24px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}

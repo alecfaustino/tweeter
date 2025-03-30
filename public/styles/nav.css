@@ -35,7 +35,7 @@ nav i {
 
 /* scroll to top button */
 .fa-angles-up {
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(104, 170, 186, 0.5);
   color: white;
   padding: 1.25em;
   font-size: 1.25em;
@@ -47,7 +47,7 @@ nav i {
 
 .fa-angles-up:hover {
   cursor: pointer;
-  background-color: red;
+  background-color: #68aaba;
 }
 
 .to-top-icon {

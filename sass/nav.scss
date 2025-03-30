@@ -45,7 +45,7 @@ nav {
 /* scroll to top button */
 .fa-angles-up {
   // red with 50% opacity
-  background-color: rgba(255, 0, 0, 0.5); 
+  background-color: rgba(104, 170, 186, 0.5);
   color: white;
   padding: 1.25em;
   font-size: 1.25em;
@@ -57,7 +57,7 @@ nav {
 
 .fa-angles-up:hover {
   cursor: pointer;
-  background-color: red;
+  background-color: $main-blue-color;
 }
 
 .to-top-icon {
